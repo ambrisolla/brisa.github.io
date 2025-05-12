@@ -22,5 +22,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist  # ajuste para onde sua build gera os arquivos
         publish_branch: main  # ou 'gh-pages' se preferir 
+        force_orphan: true
+
         
   
