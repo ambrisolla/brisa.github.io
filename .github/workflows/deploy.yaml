@@ -21,7 +21,7 @@ jobs:
     - name: Deploy to target repo
       uses: peaceiris/actions-gh-pages@v4
       with:
-        deploy_key: ${{ secrets.GH_PAGES_TOKEN }}
+        personal_token: ${{ secrets.GH_PAGES_TOKEN }}
         external_repository: ambrisolla/brisa.github.io
         publish_dir: ./build  # ajuste para onde sua build gera os arquivos
         publish_branch: main  # ou 'gh-pages' se preferir
