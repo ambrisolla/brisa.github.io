@@ -1,0 +1,18 @@
+{
+  "title" : {
+    "pt-BR": "Olá, meu nome é André! Bem-vindo ao meu site.",
+    "en-US": "Hi, I'm André! Welcome to My Website."
+  },
+  "text": {
+    "pt-BR" : "Descubra minha trajetória profissional, experiências e um pouco da minha vida pessoal.",
+    "en-US": "Discover my professional journey, experiences, and a glimpse into my personal life."
+  },
+  "about_btn" : {
+    "pt-BR": "Sobre mim",
+    "en-US": "About Me"
+  },
+  "contact_btn" : {
+    "pt-BR": "Contato",
+    "en-US": "Contact me"
+  }
+}
