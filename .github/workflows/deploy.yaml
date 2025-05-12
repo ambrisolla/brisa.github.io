@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages Repo
+name: Deploy to GitHub Pages Repository  
 on:
   push:
     branches: [main]  # ou o branch principal
