@@ -1,9 +1,7 @@
 name: Deploy to GitHub Pages Repo
-
 on:
   push:
     branches: [main]  # ou o branch principal
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
