@@ -1,28 +1,35 @@
-name: Deploy to GitHub Pages Repository  
+name: Deploy to GitHub Pages Repo
 on:
   push:
-    branches: [main]  # ou o branch principal
+    branches: [develop]  # ou o branch principal
+
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Build static site
       run: |
         npm install
         npm run build
-        env
+    
 
-    - name: Deploy to target repo
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist  # ajuste para onde sua build gera os arquivos
-        publish_branch: main  # ou 'gh-pages' se preferir 
-        force_orphan: true
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
 
-        
-  
+    - name: Autenticar com Git
+      run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+    - name: Commit e Push
+      run: |
+        git checkout develop
+        git add .
+        git commit -m "Commit automático pela action" || echo "Nada para commitar"
+        git push origin develop
