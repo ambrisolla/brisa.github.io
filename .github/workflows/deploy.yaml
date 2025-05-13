@@ -29,7 +29,7 @@ jobs:
 
     - name: Commit e Push
       run: |
-        git checkout -b develop
+        git checkout develop
         git add .
         git commit -m "Commit automático pela action" || echo "Nada para commitar"
         git push origin develop
